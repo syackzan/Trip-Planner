@@ -12,7 +12,6 @@ Location.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-            foreignKey: 'location_id',
         },
         location_name: {
             type: DataTypes.STRING,

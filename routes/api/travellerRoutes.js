@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const User = require('../../../../17-Ins_Hooks/models/User');
 const { Traveller, Trip, Location } = require('../../models');
 
 // GET all travellers

@@ -21,13 +21,15 @@ Traveller.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-        },
+        }
+    },
+        {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modeName: 'traveller',
-    }
+        }
 );
 
 module.exports = Traveller;

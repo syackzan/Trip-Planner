@@ -26,7 +26,7 @@ Trip.init(
         references: {
           model: 'traveller',
           key: 'id',
-      },
+      }},
       location_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -35,6 +35,7 @@ Trip.init(
         },
       },
     },
+    {
     
       sequelize,
       timestamps: false,
