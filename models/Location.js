@@ -6,6 +6,26 @@ class Location extends Model {}
 
 // create fields/columns for Location model
 Location.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+            foreignKey: 'location_id',
+        },
+        location_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'location',
+    }
   
 );
 
