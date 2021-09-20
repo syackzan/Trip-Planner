@@ -23,13 +23,13 @@ Traveller.init(
             unique: true,
         }
     },
-        {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modeName: 'traveller',
-        }
+    {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modeName: 'traveller',
+    }
 );
 
 module.exports = Traveller;

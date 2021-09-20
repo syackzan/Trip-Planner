@@ -16,7 +16,9 @@ router.get('/', async (req, res) => {
 // GET a single traveller
 router.get('/:id', async (req, res) => {
   try {
-    const userData = await Traveller.findByPk(req.params.id);
+    const userData = await Traveller.findByPk(req.params.id, {
+        include: [ {model: Location, through: Trip, as: 'planned_trips'}]
+    });
     if (!userData){
         res.status(404).json({ message: "User does not exist"});
     }
@@ -40,7 +42,11 @@ router.post('/', async (req, res) => {
 // DELETE a traveller
 router.delete('/:id', async (req, res) => {
  try {
-    const userData = await Traveller.destroy(req.params.id);
+    const userData = await Traveller.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
 
     if (!userData){
         res.status(404).json({ message: 'User not found!'});
